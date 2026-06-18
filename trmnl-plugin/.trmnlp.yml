@@ -1,0 +1,37 @@
+---
+# Config du serveur de dev local trmnlp — N'EST PAS uploadé vers TRMNL.
+watch:
+  - src
+  - .trmnlp.yml
+
+time_zone: Europe/Paris
+
+# ------------------------------------------------------------------
+# Données FIXTURE pour le dev local (clés à la racine, comme /api/term).
+# En prod ces données viennent du fetch authentifié de /api/term.
+# Édite ici pour tester un autre film / la glose EN.
+# ------------------------------------------------------------------
+variables:
+  trmnl:
+    user:
+      name: Matthieu
+      first_name: Matthieu
+
+  generated_at_label: "jeu. 18 juin · 08:15"
+  film_date_label: "jeu. 18 juin"
+
+  film:
+    title: "The Matrix"
+    director: "Lana & Lilly Wachowski"
+    year: 1999
+    country: "USA"
+
+  synopsis_lines:
+    - "Seorang peretas menemukan bahwa dunia hanyalah simulasi komputer."
+    - "Manusia sebenarnya diperbudak oleh mesin sebagai sumber energi."
+    - "Ia harus memilih: menerima kebenaran atau tetap dalam ilusi."
+
+  vocab:
+    - { word: "peretas", pos: "n.", gloss: "hacker, pirate" }
+    - { word: "diperbudak", pos: "v.", gloss: "être réduit en esclavage" }
+    - { word: "kebenaran", pos: "n.", gloss: "la vérité" }

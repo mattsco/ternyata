@@ -28,10 +28,17 @@ lib/
   dates.ts              parisDayNumber / todayLabelParis (déterminisme par date Paris)
   data/film.ts          Accesseur : seed en v1, basculera vers Supabase en v2
   supabase/             client / server / service (conventions kerbrise)
+  api/term/route.ts     Endpoint TRMNL (token) — payload du jour, ?lang=fr|en
+lib/
+  data/trmnl.ts         Builder du payload TRMNL (labels formatés côté serveur)
 db/migrations/
   0001_bahasa_film_daily.sql   Schéma du pipeline quotidien (prêt, non câblé)
+trmnl-plugin/           Plugin TRMNL (settings.yml + full.liquid + dev trmnlp)
 docs/                   Spec TRMNL bahasa + docs TRMNL kerbrise
 ```
+
+## Deux surfaces, une source
+Le web (`app/page.tsx`) et le TRMNL (`app/api/term` + `trmnl-plugin/`) lisent le même `lib/data/film.ts`. Le web est interactif (mots cliquables) ; le TRMNL est passif (3 mots de vocabulaire pré-affichés, réponse en bas).
 
 ## État
 - **v1 (actuel)** : contenu seed (~14 films canoniques), rotation déterministe par date, génération du cours = prompt copié / ouverture d'une IA (zéro backend, zéro clé). Supabase scaffoldé mais non utilisé.
