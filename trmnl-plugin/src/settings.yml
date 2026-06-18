@@ -6,9 +6,8 @@ static_data:
 polling_verb: GET
 framework_version: 
 serverless_language: 
-# ⚠️ À adapter au domaine de déploiement ternyata. Glose EN : ?lang=en
 polling_url: https://ternyata.vercel.app/api/term
-polling_headers:
+polling_headers: 
 polling_body:
 id: 341338
 name: ternyata · film du jour (bahasa)
