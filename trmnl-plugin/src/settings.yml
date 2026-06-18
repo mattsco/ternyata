@@ -9,6 +9,6 @@ serverless_language:
 polling_url: https://ternyata.vercel.app/api/term
 polling_headers: 
 polling_body:
-id: 341338
+id:
 name: ternyata · film du jour (bahasa)
 refresh_interval: 360
