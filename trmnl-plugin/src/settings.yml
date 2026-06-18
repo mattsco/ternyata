@@ -2,19 +2,14 @@
 strategy: polling
 no_screen_padding: 'no'
 dark_mode: 'no'
-static_data:
+static_data: 
 polling_verb: GET
-framework_version:
-serverless_language:
-# ⚠️ À adapter au domaine de déploiement ternyata (Vercel).
-# Pour la glose en anglais : ajouter ?lang=en à l'URL.
+framework_version: 
+serverless_language: 
+# ⚠️ À adapter au domaine de déploiement ternyata. Glose EN : ?lang=en
 polling_url: https://ternyata.vercel.app/api/term
-polling_headers: authorization=Bearer {{ api_token | strip }}
+polling_headers:
 polling_body:
-custom_fields:
-- keyname: api_token
-  name: Token API ternyata
-  field_type: password
-  description: Token attendu par /api/term (env TRMNL_API_TOKEN)
+id: 341338
 name: ternyata · film du jour (bahasa)
 refresh_interval: 360

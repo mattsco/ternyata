@@ -20,15 +20,17 @@ gem install trmnl_preview      # ou Docker : trmnl/trmnlp serve
 cd trmnl-plugin
 trmnlp serve                   # http://localhost:4567
 ```
-Sans token en local : le serveur rend `full.liquid` avec les fixtures de `.trmnlp.yml`.
-En prod, `trmnlp serve` peut fetch la vraie `polling_url` (token requis).
+En local, le serveur rend `full.liquid` avec les fixtures de `.trmnlp.yml`.
+En prod, `trmnlp serve` peut fetch la vraie `polling_url` (endpoint public, pas de token).
 
 ## Mise en service
-1. Déployer ternyata sur Vercel ; définir `TRMNL_API_TOKEN` (≥ 32 octets, `openssl rand -hex 32`).
+1. Déployer ternyata sur Vercel.
 2. Dans `settings.yml`, remplacer `polling_url` par le vrai domaine (`https://<domaine>/api/term`).
    Glose en anglais : `…/api/term?lang=en`.
-3. Créer le plugin privé sur TRMNL (`trmnlp push` ou éditeur web), renseigner le custom field « Token API ternyata ».
+3. Créer le plugin privé sur TRMNL (`trmnlp push` ou éditeur web).
 4. Ajouter le plugin à la playlist du device.
+
+L'endpoint `/api/term` est **public** (contenu non sensible) : aucun token à configurer.
 
 ## Contrat de données (`/api/term`, racine)
 `generated_at_label`, `film_date_label`, `film {title, director, year, country}`,
